@@ -8,8 +8,8 @@ module.exports = defineConfig({
     "requestTimeout":10000,
     "env":{
       "baseUrl": "https://magento.softwaretestingboard.com/",
-      "user":"",
-      "password":""
+      "user":"cbogdan",
+      "password":"AAAaaa123!"
     }
   },
 });

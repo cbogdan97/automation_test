@@ -5,8 +5,6 @@ const common = new Common();
 export class StorePage {
     constructor() {
         this.women = "(//span[contains(string(),'Women')])[1]";
-        this.men = "(//span[contains(string(),'Men')])[1]";
-        this.tees = "(//a[contains(string(),'Tees')])[4]";
     }
 
     navigateToStorePage(){
