@@ -1,12 +1,6 @@
-
-
 import {Common} from "../common/CommonFunctions.js";
-import {Generators} from "../common/Generators.js";
-import {RegistrationPage} from "../PageObjectModels/RegistrationPage.js"
 
 const common = new Common();
-const generator = new Generators();
-const credentials = new RegistrationPage()
 
 export class LoginPage {
     constructor() {
@@ -16,6 +10,7 @@ export class LoginPage {
         this.passwordField = "//input[@id='pass']";
         this.logoutButton1 = "(//button[@class='action switch'])[1]";
         this.logoutButton2 = "(//a[contains(string(),'Sign Out')])[1]";
+        this.invalidCredentials = "(//div[contains(string(),'The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.')])[2]"
     }
 
     navigateToLogin() {
@@ -36,6 +31,7 @@ export class LoginPage {
         common.clickButton(this.logoutButton2);
         cy.xpath("//span[contains(string(),'You are signed out')]").should('be.visible');
     }
+
 
 
 
