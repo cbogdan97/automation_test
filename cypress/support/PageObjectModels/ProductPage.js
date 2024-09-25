@@ -19,7 +19,7 @@ export class Product {
     }
 
     verifyCart(count) {
-        cy.wait(1500);
+        cy.wait(3000);
         cy.xpath(this.loadingIcon).should('not.exist');
         cy.xpath(this.counterNumber).invoke('text').then(number => {
             expect(parseInt(number)).to.equal(count);

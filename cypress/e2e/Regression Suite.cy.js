@@ -17,11 +17,9 @@ var user = generator.generateRandomText(5);
 var password = generator.generatePassword(10);
 var numbers = generator.generateNumber(5);
 
-describe('Registration suite', () => {
+describe('Registration', () => {
   beforeEach("Visit page",() =>{
     cy.visit(Cypress.env('baseUrl'))
-  })
-  it('Visit homepage', () => {
     cy.xpath('//a[@class="logo"]').should("be.visible");
   })
 
@@ -37,21 +35,17 @@ describe("Login tests",()=>{
     cy.visit(Cypress.env('baseUrl'))
   })
   it('Login account and logout - valid account', () => {
-
     loginPage.navigateToLogin();
     loginPage.fillLogin(user,password);
     loginPage.logout();
   })
 
   it('Login account- invalid account', () => {
-
     loginPage.navigateToLogin();
     loginPage.fillLogin('testz','testz');
     cy.xpath(loginPage.invalidCredentials).should('be.visible');
   })
 })
-
-
 
 describe("Add to cart and checkout tests",()=>{
   beforeEach("Visit page",() =>{
@@ -68,7 +62,6 @@ describe("Add to cart and checkout tests",()=>{
   })
 
   it('Add multiple products to cart', () => {
-
     loginPage.navigateToLogin();
     loginPage.fillLogin('randomuser','randompass');
     store.navigateToStorePage();
@@ -78,7 +71,6 @@ describe("Add to cart and checkout tests",()=>{
     product.selectProduct('Nadia','M','Yellow');
     product.verifyCart(3);
   })
-
 })
 
 describe("Add to cart and perform checkout", ()=>{
