@@ -17,7 +17,7 @@ var user = generator.generateRandomText(5);
 var password = generator.generatePassword(10);
 var numbers = generator.generateNumber(5);
 
-describe('Registration', () => {
+describe('Registration tests', () => {
   beforeEach("Visit page",() =>{
     cy.visit(Cypress.env('baseUrl'))
     cy.xpath('//a[@class="logo"]').should("be.visible");
@@ -47,7 +47,7 @@ describe("Login tests",()=>{
   })
 })
 
-describe("Add to cart and checkout tests",()=>{
+describe("Add to cart tests",()=>{
   beforeEach("Visit page",() =>{
     cy.visit(Cypress.env('baseUrl'))
   })
@@ -73,7 +73,7 @@ describe("Add to cart and checkout tests",()=>{
   })
 })
 
-describe("Add to cart and perform checkout", ()=>{
+describe("Add to cart and perform checkout tests", ()=>{
   beforeEach("Visit page",() =>{
     cy.visit(Cypress.env('baseUrl'))
   })
