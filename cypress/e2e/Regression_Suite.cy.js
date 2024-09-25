@@ -42,7 +42,7 @@ describe("Login tests",()=>{
 
   it('Login account- invalid account', () => {
     loginPage.navigateToLogin();
-    loginPage.fillLogin('testz','testz');
+    loginPage.fillLogin('invaliduser','randompassword');
     cy.xpath(loginPage.invalidCredentials).should('be.visible');
   })
 })
